@@ -10,7 +10,7 @@
     <meta name="keywords"  content="思考，记录，Linux，网络">
     <meta name="theme-color" content="#000000">
     
-    <title>偕老同穴海绵 - renz的博客 | RZ Blog</title>
+    <title>罗格镇 伟大航路的起点 - gongjing的博客 | GJ Blog</title>
 
     <!-- Web App Manifest -->
     <link rel="manifest" href="/pwa/manifest.json">
@@ -19,7 +19,7 @@
     <link rel="shortcut icon" href="/img/favicon.ico">
     
     <!-- Canonical URL -->
-    <link rel="canonical" href="http://localhost:4000/2017/08/23/%E5%81%95%E8%80%81%E5%90%8C%E7%A9%B4%E6%B5%B7%E7%BB%B5/">
+    <link rel="canonical" href="http://localhost:4000/2017/08/20/my-first-blog/">
 
     <!-- Bootstrap Core CSS -->
     <link rel="stylesheet" href="/css/bootstrap.min.css">
@@ -69,7 +69,7 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="/">renz</a>
+            <a class="navbar-brand" href="/">gongjing</a>
         </div>
 
         <!-- Collect the nav links, forms, and other content for toggling -->
@@ -151,13 +151,13 @@
 
     <!-- Image to hack wechat -->
 <!-- <img src="/img/icon_wechat.png" width="0" height="0"> -->
-<!-- <img src="/img/post-artile-bg-Euplectella.jpg" width="0" height="0"> -->
+<!-- <img src="/img/post-bg-ios9-web.jpg" width="0" height="0"> -->
 
 <!-- Post Header -->
 <style type="text/css">
     header.intro-header{
         position: relative;
-        background-image: url('/img/post-artile-bg-Euplectella.jpg')
+        background-image: url('/img/post-bg-ios9-web.jpg')
     }
 
     
@@ -173,12 +173,12 @@
                         <a class="tag" href="/tags/#随笔" title="随笔">随笔</a>
                         
                     </div>
-                    <h1>偕老同穴海绵</h1>
+                    <h1>罗格镇 伟大航路的起点</h1>
                     
                     
                     <h2 class="subheading"></h2>
                     
-                    <span class="meta">Posted by renz on August 23, 2017</span>
+                    <span class="meta">Posted by renz on August 20, 2017</span>
                 </div>
             </div>
         </div>
@@ -206,13 +206,6 @@
 
                 <ul class="pager">
                     
-                    <li class="previous">
-                        <a href="/2017/08/20/%E7%BD%97%E6%A0%BC%E9%95%87-%E4%BC%9F%E5%A4%A7%E8%88%AA%E8%B7%AF%E7%9A%84%E8%B5%B7%E7%82%B9/" data-toggle="tooltip" data-placement="top" title="罗格镇 伟大航路的起点">
-                        Previous<br>
-                        <span>罗格镇 伟大航路的起点</span>
-                        </a>
-                    </li>
-                    
                     
                 </ul>
 
@@ -224,6 +217,20 @@
             </div>  
 
     <!-- Side Catalog Container -->
+        
+            <div class="
+                col-lg-2 col-lg-offset-0
+                visible-lg-block
+                sidebar-container
+                catalog-container">
+                <div class="side-catalog">
+                    <hr class="hidden-sm hidden-xs">
+                    <h5>
+                        <a class="catalog-toggle" href="#">CATALOG</a>
+                    </h5>
+                    <ul class="catalog-body"></ul>
+                </div>
+            </div>
         
 
     <!-- Sidebar Container -->
@@ -240,16 +247,20 @@
                     <div class="tags">
         				
                             
-                				<a href="/tags/#随笔" title="随笔" rel="2">
-                                    随笔
-                                </a>
-                            
         				
         			</div>
                 </section>
                 
 
                 <!-- Friends Blog -->
+                
+                <hr>
+                <h5>FRIENDS</h5>
+                <ul class="list-inline">
+                    
+                        <li><a href="http://www.jianshu.com/u/e71990ada2fd">简书·RZ</a></li>
+                    
+                </ul>
                 
             </div>
         </div>
@@ -338,9 +349,9 @@
                     
                 </ul>
                 <p class="copyright text-muted">
-                    Copyright &copy; renz 2017
+                    Copyright &copy; gongjing 2017
                     <br>
-                    Theme on <a href="https://github.com/renzheng0403/renzheng0403.github.io.git">GitHub</a> |
+                    Theme on <a href="https://github.com/gongjing122/gongjing122.github.io.git">GitHub</a> |
                     <iframe
                         style="margin-left: 2px; margin-bottom:-5px;"
                         frameborder="0" scrolling="0" width="100px" height="20px"
@@ -440,6 +451,50 @@
 
 
 <!-- Side Catalog -->
+
+<script type="text/javascript">
+    function generateCatalog (selector) {
+        var P = $('div.post-container'),a,n,t,l,i,c;
+        a = P.find('h1,h2,h3,h4,h5,h6');
+        a.each(function () {
+            n = $(this).prop('tagName').toLowerCase();
+            i = "#"+$(this).prop('id');
+            t = $(this).text();
+            c = $('<a href="'+i+'" rel="nofollow">'+t+'</a>');
+            l = $('<li class="'+n+'_nav"></li>').append(c);
+            $(selector).append(l);
+        });
+        return true;    
+    }
+
+    generateCatalog(".catalog-body");
+
+    // toggle side catalog
+    $(".catalog-toggle").click((function(e){
+        e.preventDefault();
+        $('.side-catalog').toggleClass("fold")
+    }))
+
+    /*
+     * Doc: https://github.com/davist11/jQuery-One-Page-Nav
+     * Fork by Hux to support padding
+     */
+    async("/js/jquery.nav.js", function () {
+        $('.catalog-body').onePageNav({
+            currentClass: "active",
+            changeHash: !1,
+            easing: "swing",
+            filter: "",
+            scrollSpeed: 700,
+            scrollOffset: 0,
+            scrollThreshold: .2,
+            begin: null,
+            end: null,
+            scrollChange: null,
+            padding: 80
+        });
+    });
+</script>
 
 
 
